@@ -26,8 +26,8 @@
         android:background="@drawable/selector"/>
 
     <item
-        android:id="@+id/payment"
-        android:title="Pay"
+        android:id="@+id/booking"
+        android:title="Booking"
         android:icon="@drawable/money"
         android:background="@drawable/selector"/>
 

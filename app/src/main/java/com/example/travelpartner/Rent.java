@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -36,8 +37,8 @@ public class Rent extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.payment:
-                        startActivity(new Intent(getApplicationContext(),Rent.class));
+                    case R.id.booking:
+                        startActivity(new Intent(getApplicationContext(), Booking_Home .class));
                         overridePendingTransition(0,0);
                         return  true;
 
@@ -53,5 +54,11 @@ public class Rent extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void booking(View view)
+    {
+        Intent intent=new Intent(this,Booking.class);
+        startActivity(intent);
     }
 }

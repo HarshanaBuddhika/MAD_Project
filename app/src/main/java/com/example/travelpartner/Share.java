@@ -36,8 +36,8 @@ public class Share extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.payment:
-                        startActivity(new Intent(getApplicationContext(),Payment.class));
+                    case R.id.booking:
+                        startActivity(new Intent(getApplicationContext(), Booking_Home .class));
                         overridePendingTransition(0,0);
                         return  true;
 

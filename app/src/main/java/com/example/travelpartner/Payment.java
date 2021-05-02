@@ -18,7 +18,7 @@ public class Payment extends AppCompatActivity {
 
         BottomNavigationView btmnavi=findViewById(R.id.bottom_navigation);
 
-        btmnavi.setSelectedItemId(R.id.payment);
+
 
         btmnavi.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -36,7 +36,9 @@ public class Payment extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.payment:
+                    case R.id.booking:
+                        startActivity(new Intent(getApplicationContext(),Booking_Home.class));
+                        overridePendingTransition(0,0);
                          return  true;
 
                     case R.id.rent:

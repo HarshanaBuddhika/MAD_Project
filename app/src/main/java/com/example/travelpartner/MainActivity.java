@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.payment:
-                        startActivity(new Intent(getApplicationContext(),Payment.class));
+                    case R.id.booking:
+                        startActivity(new Intent(getApplicationContext(), Booking_Home .class));
                         overridePendingTransition(0,0);
                         return  true;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.share:
+                        case R.id.share:
                         startActivity(new Intent(getApplicationContext(),Share.class));
                         overridePendingTransition(0,0);
                         return  true;
@@ -53,5 +54,11 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void account(View view)
+    {
+        Intent intent=new Intent(this,Account.class);
+        startActivity(intent);
     }
 }
