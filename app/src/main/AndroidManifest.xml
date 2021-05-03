@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelPartner">
-        <activity android:name=".Payment_card"></activity>
+        <activity android:name=".Payments_display"></activity>
+        <activity android:name=".payment_online" />
+        <activity android:name=".Payment_card" />
         <activity android:name=".Payment_Home" />
         <activity android:name=".Booking_Home" />
         <activity android:name=".Booking" />
