@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Travel Partner</string>
+    <string name="add_a_rent">Add A Rent</string>
+    <string name="update_a_rent">Update A Rent</string>
+    <string name="delete_a_rent">Delete A Rent</string>
+    <string name="view_a_rent">View A Rent</string>
 
 </resources>
