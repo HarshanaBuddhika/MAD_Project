@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="130dp"
-        android:layout_height="101dp"
+        android:layout_width="137dp"
+        android:layout_height="114dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,82 +23,146 @@
         android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/typeOfvehicle"
-        android:layout_width="wrap_content"
+        android:id="@+id/AdId"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/type_of_vehicle"
-        app:layout_constraintEnd_toStartOf="@+id/vehicleType"
+        android:layout_marginBottom="37dp"
+        android:text="@string/ad_id"
+        app:layout_constraintBottom_toTopOf="@+id/typeOFvehicle"
+        app:layout_constraintEnd_toStartOf="@+id/enterAdId"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/vehicleType"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:hint="@string/vehicle_type"
-        app:layout_constraintBaseline_toBaselineOf="@+id/typeOfvehicle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/typeOfvehicle" />
-
-    <TextView
-        android:id="@+id/modelOfvehicle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/model_of_vehicle"
-        app:layout_constraintEnd_toStartOf="@+id/vehicleModel"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/typeOfvehicle" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/vehicleModel"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:hint="@string/vehicle_model"
-        app:layout_constraintBaseline_toBaselineOf="@+id/modelOfvehicle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/modelOfvehicle" />
-
-    <TextView
-        android:id="@+id/numberOfseat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/number_of_seat"
-        app:layout_constraintEnd_toStartOf="@+id/availableSeat"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modelOfvehicle" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.853" />
 
     <EditText
-        android:id="@+id/availableSeat"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:id="@+id/enterAdId"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_advertiesment_id"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/AdId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/AdId" />
+
+    <TextView
+        android:id="@+id/typeOFvehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/type_of_vehicle"
+        app:layout_constraintBottom_toTopOf="@+id/modelOFvehicle"
+        app:layout_constraintEnd_toStartOf="@+id/enterVehicleType"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/enterVehicleType"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_vehicle_type"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/typeOFvehicle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/typeOFvehicle" />
+
+    <TextView
+        android:id="@+id/modelOFvehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="45dp"
+        android:text="@string/model_of_vehicle"
+        app:layout_constraintBottom_toTopOf="@+id/numberOFseat"
+        app:layout_constraintEnd_toStartOf="@+id/enterVehicleModel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/enterVehicleModel"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:hint="@string/avalilable_seat"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/numberOfseat"
+        android:hint="@string/enter_vehicle_model"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/modelOFvehicle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/numberOfseat"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toEndOf="@+id/modelOFvehicle" />
+
+    <TextView
+        android:id="@+id/numberOFseat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/number_of_seats"
+        app:layout_constraintBottom_toTopOf="@+id/priceOFrent"
+        app:layout_constraintEnd_toStartOf="@+id/enterAvailableseat"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/enterAvailableseat"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_available_seats"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/numberOFseat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/numberOFseat" />
+
+    <TextView
+        android:id="@+id/priceOFrent"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="58dp"
+        android:text="@string/price_of_rent"
+        app:layout_constraintBottom_toTopOf="@+id/contactNumber"
+        app:layout_constraintEnd_toStartOf="@+id/enterPrice"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/enterPrice"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_price"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/priceOFrent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/priceOFrent" />
 
     <TextView
         android:id="@+id/contactNumber"
@@ -106,47 +170,52 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/contact_number"
-        app:layout_constraintEnd_toStartOf="@+id/teleNumber"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toStartOf="@+id/telenumber"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberOfseat" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/teleNumber"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:id="@+id/telenumber"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:hint="@string/telephone_number"
+        android:hint="@string/enter_contact_number"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/contactNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/contactNumber"
-        android:autofillHints="" />
+        app:layout_constraintStart_toEndOf="@+id/contactNumber" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="72dp"
         android:text="@string/description"
+        app:layout_constraintBottom_toTopOf="@+id/previous"
         app:layout_constraintEnd_toStartOf="@+id/des"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactNumber" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <MultiAutoCompleteTextView
+    <EditText
         android:id="@+id/des"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/enter_other_details"
+        android:inputType="textMultiLine"
         app:layout_constraintBaseline_toBaselineOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -156,23 +225,22 @@
         android:id="@+id/previous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/previous"
         android:onClick="previous"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/des" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/post"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/des" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
