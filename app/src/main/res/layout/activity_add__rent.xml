@@ -7,7 +7,7 @@
     tools:context=".Add_Rent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/vehiclepic"
         android:layout_width="137dp"
         android:layout_height="114dp"
         android:layout_marginStart="8dp"
@@ -15,12 +15,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/car"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/car" />
 
     <TextView
         android:id="@+id/AdId"
@@ -28,14 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginTop="176dp"
         android:text="@string/ad_id"
-        app:layout_constraintBottom_toTopOf="@+id/typeOFvehicle"
         app:layout_constraintEnd_toStartOf="@+id/enterAdId"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/enterAdId"
@@ -58,12 +55,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="28dp"
         android:text="@string/type_of_vehicle"
-        app:layout_constraintBottom_toTopOf="@+id/modelOFvehicle"
         app:layout_constraintEnd_toStartOf="@+id/enterVehicleType"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AdId" />
 
     <EditText
         android:id="@+id/enterVehicleType"
@@ -86,12 +83,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginTop="32dp"
         android:text="@string/model_of_vehicle"
-        app:layout_constraintBottom_toTopOf="@+id/numberOFseat"
         app:layout_constraintEnd_toStartOf="@+id/enterVehicleModel"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeOFvehicle" />
 
     <EditText
         android:id="@+id/enterVehicleModel"
@@ -114,12 +111,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="32dp"
         android:text="@string/number_of_seats"
-        app:layout_constraintBottom_toTopOf="@+id/priceOFrent"
         app:layout_constraintEnd_toStartOf="@+id/enterAvailableseat"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modelOFvehicle" />
 
     <EditText
         android:id="@+id/enterAvailableseat"
@@ -142,12 +139,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginTop="32dp"
         android:text="@string/price_of_rent"
-        app:layout_constraintBottom_toTopOf="@+id/contactNumber"
         app:layout_constraintEnd_toStartOf="@+id/enterPrice"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberOFseat" />
 
     <EditText
         android:id="@+id/enterPrice"
@@ -170,12 +167,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="32dp"
         android:text="@string/contact_number"
-        app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toStartOf="@+id/telenumber"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceOFrent" />
 
     <EditText
         android:id="@+id/telenumber"
@@ -198,12 +195,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginTop="32dp"
         android:text="@string/description"
-        app:layout_constraintBottom_toTopOf="@+id/previous"
         app:layout_constraintEnd_toStartOf="@+id/des"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactNumber" />
 
     <EditText
         android:id="@+id/des"
@@ -225,22 +222,22 @@
         android:id="@+id/previous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginBottom="60dp"
-        android:text="@string/previous"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="40dp"
         android:onClick="previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <Button
         android:id="@+id/post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:text="@string/post"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/des" />
 </androidx.constraintlayout.widget.ConstraintLayout>
