@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Travel Partner</string>
+    <string name="txtUname">User Name</string>
+    <string name="EditUname">Name</string>
+    <string name="title_activity_login01">LoginActivity01</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="textUsername">Username</string>
+    <string name="textPassword">Password</string>
+    <string name="txtUsername">UserName :</string>
+    <string name="txtpassword">Password</string>
+    <string name="btnSelectall">Login</string>
+    <string name="txtRegNav">Loging to the System</string>
+    <string name="txtName">First Name</string>
+    <string name="txtLname">Last Name</string>
+    <string name="txtemail">E Mail</string>
+    <string name="txtPhone">Phone Number</string>
+    <string name="txtPassword">Password</string>
+    <string name="btnreg">Register Hear</string>
+    <string name="txtNoAccount">Don\'t have an Account</string>
 </resources>

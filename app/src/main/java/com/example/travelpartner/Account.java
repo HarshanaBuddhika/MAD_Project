@@ -6,15 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Account extends AppCompatActivity {
-
+    private TextView textView;
+    View Reg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        Reg = findViewById(R.id.txtlogin);
 
         BottomNavigationView btmnavi=findViewById(R.id.bottom_navigation);
 
@@ -52,6 +57,15 @@ public class Account extends AppCompatActivity {
                 return false;
             }
         });
+        Reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Account.this,login01.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
 
     }
 
