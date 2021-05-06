@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.net.Inet4Address;
+
 public class Payment_Home extends AppCompatActivity {
 
     @Override
@@ -19,4 +21,11 @@ public class Payment_Home extends AppCompatActivity {
         Intent intent=new Intent(this,Payment_card.class);
         startActivity(intent);
     }
+
+    public void onlinePayment(View view)
+    {
+        Intent intent=new Intent(this,payment_online.class);
+        startActivity(intent);
+    }
+
 }
