@@ -8,11 +8,12 @@ public class RentVehicle {
     private String VehiclePrice;
     private int Contact;
     private String Description;
+    private String vehiclepic;
 
     public RentVehicle() {
     }
 
-    public RentVehicle(String id, String vehicleType, String vehicleModel, int availableSeats, String vehiclePrice, int contact, String description) {
+    public RentVehicle(String id, String vehicleType, String vehicleModel, int availableSeats, String vehiclePrice, int contact, String description, String vehiclepic) {
         Id = id;
         VehicleType = vehicleType;
         VehicleModel = vehicleModel;
@@ -20,6 +21,7 @@ public class RentVehicle {
         VehiclePrice = vehiclePrice;
         Contact = contact;
         Description = description;
+        this.vehiclepic = vehiclepic;
     }
 
     public String getId() {
@@ -76,5 +78,13 @@ public class RentVehicle {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public String getVehiclepic() {
+        return vehiclepic;
+    }
+
+    public void setVehiclepic(String vehiclepic) {
+        this.vehiclepic = vehiclepic;
     }
 }

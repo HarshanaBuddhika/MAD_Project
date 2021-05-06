@@ -18,6 +18,7 @@ public class Add_Rent extends AppCompatActivity {
     Button btnpost;
     DatabaseReference dbRef;
     RentVehicle rv;
+    String Rentid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,8 @@ public class Add_Rent extends AppCompatActivity {
                         rv.setVehiclePrice(txtPrice.getText().toString().trim());
                         rv.setContact(Integer.parseInt(txtContNo.getText().toString().trim()));
                         rv.setDescription(txtDes.getText().toString().trim());
-                        dbRef.child("R1").setValue(rv);
+                        Rentid = rv.getId();
+                        dbRef.child(Rentid).setValue(rv);
                         Toast.makeText(getApplicationContext(),"Succeessfulyy inserted",Toast.LENGTH_SHORT).show();
                         clearControls();
                     }
@@ -77,7 +79,7 @@ public class Add_Rent extends AppCompatActivity {
             }
         });
 
-        }
+    }
 
     private void clearControls(){
         txtId.setText("");
@@ -93,4 +95,5 @@ public class Add_Rent extends AppCompatActivity {
         Intent intent=new Intent( this,Rent.class);
         startActivity(intent);
     }
+
 }
