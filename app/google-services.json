@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "748350192020",
-    "project_id": "travel-partner-aba7a",
-    "storage_bucket": "travel-partner-aba7a.appspot.com"
+    "project_number": "716191150732",
+    "firebase_url": "https://travel-partner-1c78e-default-rtdb.firebaseio.com",
+    "project_id": "travel-partner-1c78e",
+    "storage_bucket": "travel-partner-1c78e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:748350192020:android:871f836e8429b026dd7781",
+        "mobilesdk_app_id": "1:716191150732:android:35a0f76bb3ecf78a0a81a9",
         "android_client_info": {
           "package_name": "com.example.travelpartner"
         }
       },
       "oauth_client": [
         {
-          "client_id": "748350192020-gqr0ppmse32ec4kuami996qsd6rqk7c8.apps.googleusercontent.com",
+          "client_id": "716191150732-itsdb282on231fsgsubbgmichovu3doc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBKjdzMcOeY5LxW7ZmGf6QuP7pu89DaMQQ"
+          "current_key": "AIzaSyAQ-XCTuAGVhF-kz61-EPlkSnxzuUNKKyE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "748350192020-gqr0ppmse32ec4kuami996qsd6rqk7c8.apps.googleusercontent.com",
+              "client_id": "716191150732-itsdb282on231fsgsubbgmichovu3doc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -16,6 +16,19 @@ public class Rider {
     public Rider() {
     }
 
+    public Rider(String from, String to, String adId, String name, String seat, String ride, String date, String DTime, String ATime, int vm) {
+        this.from = from;
+        this.to = to;
+        this.adId = adId;
+        this.name = name;
+        this.seat = seat;
+        this.ride = ride;
+        this.date = date;
+        this.DTime = DTime;
+        this.ATime = ATime;
+        Vm = vm;
+    }
+
     public String getFrom() {
         return from;
     }

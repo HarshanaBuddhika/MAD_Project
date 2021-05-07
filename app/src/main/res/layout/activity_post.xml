@@ -2,202 +2,135 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TpDtime"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".post">
 
-    <EditText
-        android:id="@+id/TpRide"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="410dp"
+        android:layout_height="505dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_total_cost_for_the_ride"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpSeat" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/TpDate"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_date"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpRide" />
+        <EditText
+            android:id="@+id/TpFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/where_are_you_from"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/TpDTime"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_departure_time"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpDate" />
+        <EditText
+            android:id="@+id/TpTo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/where_are_you_going"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/TpATime"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_arrival_time"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpDTime" />
+        <EditText
+            android:id="@+id/TpAdId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/please_enter_your_ad_id"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/TpVModel"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_vehical_model"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpATime" />
+        <EditText
+            android:id="@+id/TpName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/please_enter_your_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/TpAdId"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_your_advertiesment_id"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpTo" />
+        <EditText
+            android:id="@+id/TpSeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/please_enter_number_of_available_seats"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/TpName"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_your_name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpAdId" />
+        <EditText
+            android:id="@+id/TpRide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/enter_the_total_cost_for_ride"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/TpSeat"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/enter_number_of_seats"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpName" />
+        <EditText
+            android:id="@+id/TpDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/enter_date"
+            android:inputType="date|textPersonName" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="40dp"
-        android:onClick="button"
-        android:text="@string/back"
+        <EditText
+            android:id="@+id/TpDepTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/enter_departure_time"
+            android:inputType="textPersonName|time" />
+
+        <EditText
+            android:id="@+id/TpATime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/enter_arrival_time"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName|time" />
+
+        <EditText
+            android:id="@+id/TpVModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/enter_vehical_model"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="11dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginBottom="40dp"
-        android:onClick="button2"
-        android:text="Post"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/TpTo"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/where_are_you_going"
-        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TpFrom" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <EditText
-        android:id="@+id/TpFrom"
-        android:layout_width="399dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/where_are_you_from"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="button"
+            android:text="@string/back" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/post_ad" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

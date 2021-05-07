@@ -33,7 +33,7 @@ public class post extends AppCompatActivity {
         txtSeat = findViewById(R.id.TpSeat);
         txtRide = findViewById(R.id.TpRide);
         txtDate = findViewById(R.id.TpDate);
-        txtDTime = findViewById(R.id.TpDTime);
+        txtDTime = findViewById(R.id.TpDepTime);
         txtATime = findViewById(R.id.TpATime);
         txtVm = findViewById(R.id.TpVModel);
 
@@ -46,26 +46,34 @@ public class post extends AppCompatActivity {
             public void onClick(View v){
                 dbRef = FirebaseDatabase.getInstance().getReference().child("Rider");
                 try{
-                    if(TextUtils.isEmpty(txtFrom.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Location", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtTo.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Location", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtAdId.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty ID", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtName.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Name", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtSeat.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Seat", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtRide.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Cost for ride", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtDate.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Date", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtDTime.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Departure Time", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtATime.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Arrival Time", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtVm.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Empty Vehicle Model", Toast.LENGTH_SHORT).show();
+                    if(TextUtils.isEmpty(txtFrom.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Location", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtTo.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Location", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtAdId.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty ID", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtName.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Name", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtSeat.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Seat", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtRide.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Cost for ride", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtDate.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Date", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtDTime.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Departure Time", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (TextUtils.isEmpty(txtATime.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Arrival Time", Toast.LENGTH_SHORT).show();
+                    } 
+
                     else{
                         rid.setFrom(txtFrom.getText().toString().trim());
                         rid.setTo(txtTo.getText().toString().trim());
@@ -77,7 +85,8 @@ public class post extends AppCompatActivity {
                         rid.setDTime(txtDTime.getText().toString().trim());
                         rid.setATime(txtATime.getText().toString().trim());
                         rid.setVm(Integer.parseInt(txtVm.getText().toString().trim()));
-                        dbRef.child("rid1").setValue(rid);
+
+                        dbRef.child("rider1").setValue(rid);
                         Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
                         clearControls();
                     }
@@ -87,12 +96,7 @@ public class post extends AppCompatActivity {
                 }
             }
         });
-        }
-
-
-
-
-
+    }
 
     private void clearControls(){
         txtFrom.setText("");
