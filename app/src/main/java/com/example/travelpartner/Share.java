@@ -60,5 +60,10 @@ public class Share extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void ViewARide (View view){
+        Intent intent =new Intent(this,RecycleViewFirebase.class);
+        startActivity(intent);
+
+    }
 
 }

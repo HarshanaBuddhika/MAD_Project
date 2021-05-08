@@ -15,8 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class post extends AppCompatActivity {
 
-     private EditText txtFrom, txtTo, txtAdId, txtName, txtSeat, txtRide, txtDate, txtDTime, txtATime, txtVm;
-     private Button butPost;
+     EditText txtFrom, txtTo, txtAdId, txtName, txtSeat, txtRide, txtDate, txtDTime, txtATime, txtVm;
+     Button butPost;
      DatabaseReference dbRef;
      Rider rid;
 
@@ -72,7 +72,10 @@ public class post extends AppCompatActivity {
                     }
                     else if (TextUtils.isEmpty(txtATime.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Empty Arrival Time", Toast.LENGTH_SHORT).show();
-                    } 
+                    }
+                    else if (TextUtils.isEmpty(txtVm.getText().toString())) {
+                        Toast.makeText(getApplicationContext(), "Empty Vehicle Model", Toast.LENGTH_SHORT).show();
+                    }
 
                     else{
                         rid.setFrom(txtFrom.getText().toString().trim());
@@ -84,7 +87,7 @@ public class post extends AppCompatActivity {
                         rid.setDate(txtDate.getText().toString().trim());
                         rid.setDTime(txtDTime.getText().toString().trim());
                         rid.setATime(txtATime.getText().toString().trim());
-                        rid.setVm(Integer.parseInt(txtVm.getText().toString().trim()));
+                        rid.setVm(txtVm.getText().toString().trim());
 
                         dbRef.child("rider1").setValue(rid);
                         Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();

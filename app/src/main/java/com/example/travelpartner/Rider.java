@@ -10,13 +10,13 @@ public class Rider {
     private String date;
     private String DTime;
     private String ATime;
-    private int Vm;
+    private String Vm;
 
 
     public Rider() {
     }
 
-    public Rider(String from, String to, String adId, String name, String seat, String ride, String date, String DTime, String ATime, int vm) {
+    public Rider(String from, String to, String adId, String name, String seat, String ride, String date, String DTime, String ATime, String vm) {
         this.from = from;
         this.to = to;
         this.adId = adId;
@@ -26,7 +26,7 @@ public class Rider {
         this.date = date;
         this.DTime = DTime;
         this.ATime = ATime;
-        Vm = vm;
+        this. Vm = vm;
     }
 
     public String getFrom() {
@@ -101,11 +101,11 @@ public class Rider {
         this.ATime = ATime;
     }
 
-    public int getVm() {
+    public String getVm() {
         return Vm;
     }
 
-    public void setVm(int vm) {
-        Vm = vm;
+    public void setVm(String vm) {
+        this.Vm = vm;
     }
 }
