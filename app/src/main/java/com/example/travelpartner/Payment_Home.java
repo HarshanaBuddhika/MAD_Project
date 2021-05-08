@@ -16,7 +16,7 @@ public class Payment_Home extends AppCompatActivity {
         setContentView(R.layout.activity_payment__home);
     }
 
-    public void cardPayment(View view)
+    /*public void cardPayment(View view)
     {
         Intent intent=new Intent(this,Payment_card.class);
         startActivity(intent);
@@ -26,6 +26,6 @@ public class Payment_Home extends AppCompatActivity {
     {
         Intent intent=new Intent(this,payment_online.class);
         startActivity(intent);
-    }
+    }*/
 
 }

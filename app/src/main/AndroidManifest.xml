@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelPartner">
-        <activity android:name=".Payment_card"></activity>
+        <activity android:name=".vehiclShairform"></activity>
+        <activity android:name=".PassengerReport" />
+        <activity android:name=".Payment_card" />
         <activity android:name=".Payment_Home" />
-        <activity android:name=".Booking_Home" />
-        <activity android:name=".Booking" />
         <activity android:name=".Share" />
         <activity android:name=".Rent" />
         <activity android:name=".Payment" />
         <activity android:name=".Account" />
+        <activity android:name=".login01" />
+        <activity android:name=".Register" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

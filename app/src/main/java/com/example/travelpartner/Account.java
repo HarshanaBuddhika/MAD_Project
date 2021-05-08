@@ -38,10 +38,10 @@ public class Account extends AppCompatActivity {
                     case R.id.account:
                         return  true;
 
-                    case R.id.booking:
+                    /*case R.id.booking:
                         startActivity(new Intent(getApplicationContext(),Booking_Home.class));
                         overridePendingTransition(0,0);
-                        return  true;
+                        return  true;*/
 
                     case R.id.rent:
                         startActivity(new Intent(getApplicationContext(),Rent.class));
@@ -60,7 +60,7 @@ public class Account extends AppCompatActivity {
         Reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Account.this,login01.class);
+                Intent i = new Intent(Account.this, login01.class);
                 startActivity(i);
                 finish();
             }

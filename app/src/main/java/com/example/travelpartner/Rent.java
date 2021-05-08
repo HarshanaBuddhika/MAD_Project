@@ -37,10 +37,10 @@ public class Rent extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.booking:
+                    /*case R.id.booking:
                         startActivity(new Intent(getApplicationContext(), Booking_Home .class));
                         overridePendingTransition(0,0);
-                        return  true;
+                        return  true;*/
 
                     case R.id.rent:
                          return  true;
@@ -56,9 +56,9 @@ public class Rent extends AppCompatActivity {
         });
     }
 
-    public void booking(View view)
+    /*public void booking(View view)
     {
         Intent intent=new Intent(this,Booking.class);
         startActivity(intent);
-    }
+    }*/
 }

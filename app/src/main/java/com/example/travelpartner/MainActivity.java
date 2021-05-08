@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return  true;
 
-                    case R.id.booking:
+                    /*case R.id.booking:
                         startActivity(new Intent(getApplicationContext(), Booking_Home .class));
                         overridePendingTransition(0,0);
-                        return  true;
+                        return  true;*/
 
                     case R.id.rent:
                         startActivity(new Intent(getApplicationContext(),Rent.class));
