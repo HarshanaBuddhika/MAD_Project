@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="148dp"
         android:text="@string/ad_id"
         app:layout_constraintEnd_toStartOf="@+id/enterAdId"
         app:layout_constraintHorizontal_bias="0.5"
@@ -207,9 +207,9 @@
         android:id="@+id/previous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="648dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="544dp"
         android:onClick="previous"
         android:text="@string/previous"
         app:layout_constraintStart_toStartOf="parent"
@@ -219,23 +219,39 @@
         android:id="@+id/post"
         android:layout_width="121dp"
         android:layout_height="47dp"
-        android:layout_marginTop="648dp"
+        android:layout_marginTop="544dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/post"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toEndOf="@+id/previous"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="274dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <ImageView
+        android:id="@+id/imgview"
+        android:layout_width="192dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="TODO"
+        app:layout_constraintStart_toEndOf="@+id/ChooseImage"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/car"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@color/white" />
+
+    <Button
+        android:id="@+id/ChooseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="@string/choose_image"
+        app:layout_constraintEnd_toStartOf="@+id/imgview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

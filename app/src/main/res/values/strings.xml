@@ -21,7 +21,8 @@
     <string name="post">Post</string>
     <string name="enter_contact_number">Enter Contact Number</string>
     <string name="todo">TODO</string>
-
+    <string name="choose_image">Choose Image</string>
+    <string name="todo">TODO</string>
 
 
 </resources>

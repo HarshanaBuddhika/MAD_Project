@@ -59,4 +59,9 @@ public class Rent extends AppCompatActivity {
         Intent intent=new Intent( this,Add_Rent.class);
         startActivity(intent);
     }
+
+    public void UpdateARent (View view){
+        Intent intent=new Intent( this,Update_Rent.class);
+        startActivity(intent);
+    }
 }
