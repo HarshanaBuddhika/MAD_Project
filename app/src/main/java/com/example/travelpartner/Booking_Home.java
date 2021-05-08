@@ -61,6 +61,12 @@ public class Booking_Home extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void searchABooking(View view)
+    {
+        Intent intent=new Intent(this,Booking_display.class);
+        startActivity(intent);
+    }
+
     public void makeApayment(View view)
     {
         Intent intent=new Intent(this,Payment_Home.class);

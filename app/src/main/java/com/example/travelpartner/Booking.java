@@ -13,13 +13,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Booking extends AppCompatActivity {
 
-    EditText name,uid,adid,address,tripstart,tripend,noofpassenger,nodays,contactno;
+    EditText name,uid,adid,address,tripstart,tripend,noofpassenger,nodays,contactno,bookingID;
     Button maketheBooking;
+
+    long bookingid=0;
 
     Bookings makeAbooking;
 
@@ -39,15 +44,30 @@ public class Booking extends AppCompatActivity {
         noofpassenger=findViewById(R.id.booking_nopassengers);
         nodays=findViewById(R.id.booking_nodays);
         contactno=findViewById(R.id.booking_contactno);
+        bookingID=findViewById(R.id.bookingid);
 
         maketheBooking=findViewById(R.id.btn_makethebooking);
 
         makeAbooking=new Bookings();
 
+        bookingref= FirebaseDatabase.getInstance().getReference().child("Bookings");
+        bookingref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    bookingid=(snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         maketheBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bookingref= FirebaseDatabase.getInstance().getReference().child("Bookings");
+
 
                 try{
 
@@ -95,7 +115,9 @@ public class Booking extends AppCompatActivity {
                         makeAbooking.setNoofDays(Integer.parseInt(nodays.getText().toString()));
                         makeAbooking.setContactNo(Integer.parseInt(contactno.getText().toString().trim()));
 
-
+                        bookingref.child(String.valueOf(bookingid)).setValue(makeAbooking);
+                        Toast.makeText(getApplicationContext(),"Booking Successfully Added",Toast.LENGTH_SHORT).show();
+                        clearFeilds3();
 
                     }
 
@@ -107,6 +129,20 @@ public class Booking extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void clearFeilds3()
+    {
+        name.setText("");
+        uid.setText("");
+        adid.setText("");
+        address.setText("");
+        tripstart.setText("");
+        tripend.setText("");
+        noofpassenger.setText("");
+        nodays.setText("");
+        contactno.setText("");
+        bookingID.setText(String.valueOf(bookingid));
     }
 
 

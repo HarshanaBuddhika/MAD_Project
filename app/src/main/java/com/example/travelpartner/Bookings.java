@@ -2,6 +2,8 @@ package com.example.travelpartner;
 
 public class Bookings {
 
+
+    private String bid;
     private String name;
     private String uid;
     private String advertistmentID;
@@ -15,6 +17,10 @@ public class Bookings {
     public Bookings() {
 
     }
+
+    public String getBid() { return bid;  }
+
+    public void setBid(String bid) {this.bid = bid;}
 
     public String getName() {
         return name;

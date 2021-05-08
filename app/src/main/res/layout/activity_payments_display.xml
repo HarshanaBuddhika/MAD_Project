@@ -28,7 +28,8 @@
         android:text="Search The Online Payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paymentid" />
+        app:layout_constraintTop_toBottomOf="@+id/paymentid"
+        android:background="@drawable/custom_buttons"/>
 
     <Button
         android:id="@+id/search_card"
@@ -39,7 +40,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_online" />
+        app:layout_constraintTop_toBottomOf="@+id/search_online"
+        android:background="@drawable/custom_buttons"/>
 
     <TextView
         android:id="@+id/textView6"

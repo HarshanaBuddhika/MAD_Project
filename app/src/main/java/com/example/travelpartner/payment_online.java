@@ -76,7 +76,7 @@ public class payment_online extends AppCompatActivity {
 
                         dbref2.child(paymentid).setValue(pay2);
 
-                        Toast.makeText(getApplicationContext(),"Data Saved Successfully",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Payment Was successfull",Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(),"Your Payment ID is your Booking ID + User ID",Toast.LENGTH_LONG).show();
                         clearFeilds2();
                     }
