@@ -1,12 +1,12 @@
 package com.example.travelpartner;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -60,8 +60,10 @@ public class Rent extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void UpdateARent (View view){
-        Intent intent=new Intent( this,Update_Rent.class);
+    public void SearchARent (View view){
+        Intent intent=new Intent( this,Post_Rent.class);
         startActivity(intent);
     }
+
+
 }

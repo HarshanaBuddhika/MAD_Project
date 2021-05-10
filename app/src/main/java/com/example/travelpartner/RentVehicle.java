@@ -1,6 +1,8 @@
 package com.example.travelpartner;
 
 public class RentVehicle {
+
+    private String rid;
     private String Id;
     private String VehicleType;
     private String VehicleModel;
@@ -8,9 +10,20 @@ public class RentVehicle {
     private String VehiclePrice;
     private int Contact;
     private String Description;
-    private String Imageid;
+
 
     public RentVehicle() {
+    }
+
+
+
+
+    public String getRid() {
+        return rid;
+    }
+
+    public void setRid(String rid) {
+        this.rid = rid;
     }
 
     public String getId() {
@@ -67,13 +80,5 @@ public class RentVehicle {
 
     public void setDescription(String description) {
         Description = description;
-    }
-
-    public String getImageid() {
-        return Imageid;
-    }
-
-    public void setImageid(String imageid) {
-        Imageid = imageid;
     }
 }

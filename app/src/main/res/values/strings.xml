@@ -1,28 +1,11 @@
 <resources>
     <string name="app_name">Travel Partner</string>
-    <string name="add_a_rent">Add A Rent</string>
-    <string name="update_a_rent">Update A Rent</string>
-    <string name="delete_a_rent">Delete A Rent</string>
-    <string name="view_a_rent">View A Rent</string>
-    <string name="ad_id">AD Id</string>
-    <string name="enter_advertiesment_id">Enter Advertiesment Id</string>
-    <string name="type_of_vehicle">Type of Vehicle</string>
-    <string name="enter_vehicle_type">Enter Vehicle Type</string>
-    <string name="model_of_vehicle">Model of Vehicle</string>
-    <string name="number_of_seats">Number of Seats</string>
-    <string name="enter_vehicle_model">Enter Vehicle Model</string>
-    <string name="enter_available_seats">Enter Available Seats</string>
-    <string name="price_of_rent">Price of Rent</string>
-    <string name="enter_price">Enter Price</string>
-    <string name="contact_number">Contact Number</string>
-    <string name="description">Description</string>
-    <string name="previous">Previous</string>
-    <string name="enter_other_details">Enter Other Details</string>
+    <string name="todo">TODO</string>
     <string name="post">Post</string>
-    <string name="enter_contact_number">Enter Contact Number</string>
-    <string name="todo">TODO</string>
-    <string name="choose_image">Choose Image</string>
-    <string name="todo">TODO</string>
+    <string name="enter_number_of_seats">Enter Number Of Seats</string>
+    <string name="your_rent_id_is">Your Rent Id is</string>
+    <string name="search_a_rent">Search A Rent</string>
+    <string name="update">Update</string>
 
 
 </resources>
