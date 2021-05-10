@@ -19,51 +19,63 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private static final String TAG = "Recycler View Adapter";
-    private ArrayList<String> mImageNames = new ArrayList<>();
-    private ArrayList<String> mImage = new ArrayList<>();
-    private Context mContext;
-    public RecyclerViewAdapter(ArrayList<String> mImageNames, ArrayList<String>
-            mImage, Context mContext) {
-        this.mImageNames = mImageNames;
-        this.mImage = mImage;
-        this.mContext = mContext;
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
+
+    ArrayList<Model> mList;
+    Context context;
+
+    public RecyclerViewAdapter(Context context , ArrayList<Model> mList){
+        this.mList = mList;
+        this.context = context;
     }
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view =
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_list,parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.layout , parent , false);
+        return new MyViewHolder(v);
     }
-    @SuppressLint("LongLogTag")
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        Log.d(TAG, "onBindViewHolder: called");
-        Glide.with(mContext)
-                .asBitmap().load(mImage.get(position));
-        holder.imageName.setText(mImageNames.get(position));
-        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked on"+mImageNames.get(position));
 
-                Toast.makeText(mContext,mImageNames.get(position),Toast.LENGTH_SHORT).show();
-            }
-        });
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Model model = mList.get(position);
+        holder.from.setText(model.getFrom());
+        holder.to.setText(model.getTo());
+        holder.adId.setText(model.getAdId());
+        holder.name.setText(model.getName());
+        holder.seat.setText(model.getSeat());
+        holder.ride.setText(model.getRide());
+        holder.date.setText(model.getDate());
+        holder.DTime.setText(model.getDTime());
+        holder.ATime.setText(model.getATime());
+        holder.Vm.setText(model.getVm());
+
     }
+
     @Override
     public int getItemCount() {
-        return mImageNames.size();
+        return mList.size();
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView imageName;
-        RelativeLayout parentLayout;
-        public ViewHolder(@NonNull View itemView) {
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+
+        TextView from, to, adId, name, seat, ride, date, DTime, ATime, Vm;
+
+
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            from = itemView.findViewById(R.id.TpFrom);
+            to = itemView.findViewById(R.id.TpTo);
+            adId = itemView.findViewById(R.id.TpAdId);
+            name = itemView.findViewById(R.id.TpName);
+            seat = itemView.findViewById(R.id.TpSeat);
+            ride = itemView.findViewById(R.id.TpRide);
+            date = itemView.findViewById(R.id.TpDate);
+            DTime = itemView.findViewById(R.id.TpDepTime);
+            ATime = itemView.findViewById(R.id.TpATime);
+            Vm = itemView.findViewById(R.id.TpVModel);
         }
     }
+
 }

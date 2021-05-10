@@ -65,5 +65,10 @@ public class Share extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void search (View view){
+        Intent intent =new Intent(this,Display.class);
+        startActivity(intent);
+
+    }
 
 }

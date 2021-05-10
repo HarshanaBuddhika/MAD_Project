@@ -20,6 +20,9 @@ public class post extends AppCompatActivity {
      DatabaseReference dbRef;
      Rider rid;
 
+     private FirebaseDatabase db = FirebaseDatabase.getInstance();
+     private DatabaseReference root = db.getReference().child("Rider");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
