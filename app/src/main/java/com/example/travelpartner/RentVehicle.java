@@ -2,7 +2,7 @@ package com.example.travelpartner;
 
 public class RentVehicle {
 
-    private String rid;
+
     private String Id;
     private String VehicleType;
     private String VehicleModel;
@@ -18,13 +18,7 @@ public class RentVehicle {
 
 
 
-    public String getRid() {
-        return rid;
-    }
 
-    public void setRid(String rid) {
-        this.rid = rid;
-    }
 
     public String getId() {
         return Id;

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Post_Rent extends AppCompatActivity {
 
-    EditText rid,Type,Model,Seats,Price,Contact,Description;
+    EditText Id,Type,Model,Seats,Price,Contact,Description;
     Button search,update,delete;
 
 
@@ -50,9 +50,9 @@ public class Post_Rent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                rid = findViewById(R.id.r_rid);
-                rentdisplay.setRid(rid.getText().toString());
-                RID = rentdisplay.getRid();
+                Id = findViewById(R.id.r_rid);
+                rentdisplay.setId(Id.getText().toString());
+                RID = rentdisplay.getId();
 
                 DatabaseReference rentdisplay = FirebaseDatabase.getInstance().getReference().child("RentVehicle").child(RID);
                 rentdisplay.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -84,9 +84,9 @@ public class Post_Rent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                rid = findViewById(R.id.r_rid);
-                rentdisplay.setRid(rid.getText().toString());
-                RID = rentdisplay.getRid();
+                Id = findViewById(R.id.r_rid);
+                rentdisplay.setId(Id.getText().toString());
+                RID = rentdisplay.getId();
                 DatabaseReference rupdate = FirebaseDatabase.getInstance().getReference().child("RentVehicle");
                 try{
 
@@ -140,9 +140,9 @@ public class Post_Rent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                rid=findViewById(R.id.r_rid);
-                rentdisplay.setRid(rid.getText().toString());
-                RID=rentdisplay.getRid();
+                Id=findViewById(R.id.r_rid);
+                rentdisplay.setId(Id.getText().toString());
+                RID=rentdisplay.getId();
                 DatabaseReference bdelete=FirebaseDatabase.getInstance().getReference().child("RentVehicle").child(RID);
                 bdelete.removeValue();
                 Toast.makeText(getApplicationContext(),"Rent Deleted Successfully",Toast.LENGTH_SHORT).show();
