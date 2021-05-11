@@ -65,5 +65,9 @@ public class Rent extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void show (View view){
+        Intent intent=new Intent( this,rentlist.class);
+        startActivity(intent);
+    }
 
 }

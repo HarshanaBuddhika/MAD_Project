@@ -11,15 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-4dp"
-        android:layout_marginBottom="-4dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginBottom="0dp"
         app:itemBackground="@color/white"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_navigation"
-        android:layout_marginLeft="-4dp"
-        android:layout_alignParentLeft="true" />
+        app:menu="@menu/menu_navigation" />
 
     <Button
         android:id="@+id/btn_AddARent"
@@ -28,49 +28,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="118dp"
-        android:layout_marginLeft="118dp"
-        android:layout_marginTop="282dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="122dp"
+        android:layout_marginLeft="122dp"
+        android:layout_marginTop="363dp"
         android:onClick="AddARent"
         android:text="Add A Rent" />
-
-    <Button
-        android:id="@+id/btn_UpdateARent"
-        android:layout_width="187dp"
-        android:layout_height="59dp"
-        android:layout_below="@+id/btn_DeleteARent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginLeft="114dp"
-        android:layout_marginTop="48dp"
-
-        android:text="Update A Rent" />
-
-    <Button
-        android:id="@+id/btn_DeleteARent"
-        android:layout_width="187dp"
-        android:layout_height="59dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="394dp"
-        android:text="Delete A Rent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="365dp"
-        android:layout_height="133dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:contentDescription="@string/todo"
-        app:srcCompat="@drawable/images" />
 
     <Button
         android:id="@+id/btn_SearchARent"
@@ -80,10 +43,35 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="109dp"
+        android:layout_marginTop="254dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginRight="125dp"
         android:onClick="SearchARent"
-        android:layout_marginRight="109dp"
         android:text="@string/search_a_rent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-68dp"
+        app:srcCompat="@drawable/caradd"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="22dp"
+        android:onClick="show"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="292dp"
+        android:text="Show" />
 
 </RelativeLayout>

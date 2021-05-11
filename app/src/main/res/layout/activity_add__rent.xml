@@ -21,7 +21,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="325dp"
+            android:layout_height="216dp"
             android:layout_margin="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
@@ -30,49 +30,53 @@
             <EditText
                 android:id="@+id/type"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:hint="Enter Type of vehicle"
                 android:importantForAutofill="no"
-               />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/model"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:hint="Enter Model of vehicle"
 
-                android:importantForAutofill="no" />
+                android:importantForAutofill="no"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/seats"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="@string/enter_number_of_seats"
-                android:importantForAutofill="no" />
+                android:layout_height="35dp"
+                android:hint="Enter_number_of_seats"
+                android:importantForAutofill="no"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/price"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:hint="Enter Price of Rent"
                 android:importantForAutofill="no"
-                 />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/contact"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Enter Contact Number" />
+                android:layout_height="35dp"
+                android:hint="Enter Contact Number"
+                android:textSize="14sp" />
 
 
             <EditText
                 android:id="@+id/description"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="Enter any details here"
-                android:inputType="textMultiLine" />
+                android:hint="Enter Other details here"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

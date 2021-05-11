@@ -2,6 +2,7 @@ package com.example.travelpartner;
 
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,8 @@ public class Post_Rent extends AppCompatActivity {
 
     String RID;
     RentVehicle rentdisplay;
+    RentVehicle rupdate;
+    RentVehicle bdelete;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +37,7 @@ public class Post_Rent extends AppCompatActivity {
         Model = findViewById(R.id.r_Model);
         Seats= findViewById(R.id.r_Seats);
         Price = findViewById(R.id.r_Price);
-        Contact = findViewById(R.id.contact);
+        Contact = findViewById(R.id.r_Contact);
         Description = findViewById(R.id.r_Description);
 
         search = findViewById(R.id.btn_search);
@@ -77,6 +80,87 @@ public class Post_Rent extends AppCompatActivity {
                 });
             }
         });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                rid = findViewById(R.id.r_rid);
+                rentdisplay.setRid(rid.getText().toString());
+                RID = rentdisplay.getRid();
+                DatabaseReference rupdate = FirebaseDatabase.getInstance().getReference().child("RentVehicle");
+                try{
+
+                    if(TextUtils.isEmpty(Type.getText().toString()))
+                    {
+
+                    }
+                    else if(TextUtils.isEmpty(Model.getText().toString()))
+                    {
+
+                    }
+                    else if(TextUtils.isEmpty(Seats.getText().toString()))
+                    {
+
+                    }
+                    else if(TextUtils.isEmpty(Price.getText().toString()))
+                    {
+
+                    }
+                    else if(TextUtils.isEmpty(Contact.getText().toString()))
+                    {
+
+                    }
+                    else if(TextUtils.isEmpty(Description.getText().toString()))
+                    {
+
+                    }
+
+                    else
+                        {
+                        rentdisplay.setVehicleType(Type.getText().toString().trim());
+                            rentdisplay.setVehicleType(Model.getText().toString().trim());
+                            rentdisplay.setVehicleType(Seats.getText().toString().trim());
+                            rentdisplay.setVehicleType(Price.getText().toString().trim());
+                            rentdisplay.setVehicleType(Contact.getText().toString().trim());
+                            rentdisplay.setVehicleType(Description.getText().toString().trim());
+
+                            rupdate.child(RID).setValue(rentdisplay);
+                            Toast.makeText(getApplicationContext(),"Rent Update Was Successful",Toast.LENGTH_SHORT).show();
+
+
+                        }
+
+                } catch (NumberFormatException ee) {
+                    Toast.makeText(getApplicationContext(),"Enter valid Data",Toast.LENGTH_SHORT).show();;
+                }
+
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                rid=findViewById(R.id.r_rid);
+                rentdisplay.setRid(rid.getText().toString());
+                RID=rentdisplay.getRid();
+                DatabaseReference bdelete=FirebaseDatabase.getInstance().getReference().child("RentVehicle").child(RID);
+                bdelete.removeValue();
+                Toast.makeText(getApplicationContext(),"Rent Deleted Successfully",Toast.LENGTH_SHORT).show();
+                clearFeilds4();
+            }
+        });
 
   }
+    public void clearFeilds4()
+    {
+
+        Type.setText("");
+        Model.setText("");
+        Seats.setText("");
+        Price.setText("");
+        Contact.setText("");
+        Description.setText("");
+
+
+    }
 }
