@@ -1,12 +1,5 @@
 package com.example.travelpartner;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,36 +7,33 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.travelpartner.Rider;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 public class Display extends AppCompatActivity {
-
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("User");
 
     EditText txtFrom, txtTo, txtAdId, txtName, txtSeat, txtRide, txtDate, txtDTime, txtATime, txtVm;
     Button search,update,delete;
-    String SID;
-    Rider rid;
 
+
+    String SID;
     Rider rdisplay;
     Rider rupdate;
     Rider rdelete;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
+
         txtFrom = findViewById(R.id.TpFrom);
         txtTo = findViewById(R.id.TpTo);
-        txtAdId = findViewById(R.id.TpAdId);
         txtName = findViewById(R.id.TpName);
         txtSeat = findViewById(R.id.TpSeat);
         txtRide = findViewById(R.id.TpRide);
@@ -52,30 +42,28 @@ public class Display extends AppCompatActivity {
         txtATime = findViewById(R.id.TpATime);
         txtVm = findViewById(R.id.TpVModel);
 
-        search=findViewById(R.id.sbtn_search);
+        search = findViewById(R.id.sbtn_search);
         update=findViewById(R.id.sbtn_update);
         delete=findViewById(R.id.sbtn_delete);
 
-        rid = new Rider();
-
+        rdisplay = new Rider();
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                txtAdId=findViewById(R.id.v_adid);
+                txtAdId = findViewById(R.id.v_adid);
                 rdisplay.setAdId(txtAdId.getText().toString());
-                SID=rdisplay.getAdId();
+                SID = rdisplay.getAdId();
 
-                DatabaseReference sdisplay= FirebaseDatabase.getInstance().getReference().child("Sharing").child(SID);
-                sdisplay.addListenerForSingleValueEvent(new ValueEventListener() {
+                DatabaseReference rdisplay = FirebaseDatabase.getInstance().getReference().child("RentVehicle").child(SID);
+                rdisplay.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.hasChildren())
+                        if (snapshot.hasChildren())
                         {
                             txtFrom.setText(snapshot.child("From").getValue().toString());
                             txtTo.setText(snapshot.child("To").getValue().toString());
-                            txtAdId.setText(snapshot.child("advertistmentID").getValue().toString());
                             txtName.setText(snapshot.child("Name").getValue().toString());
                             txtSeat.setText(snapshot.child("Available seats").getValue().toString());
                             txtRide.setText(snapshot.child("Total cost").getValue().toString());
@@ -86,7 +74,7 @@ public class Display extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast.makeText(getApplicationContext(),"There is No sharing ride regarding this ID",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"There is No ride regarding this ID",Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -95,32 +83,23 @@ public class Display extends AppCompatActivity {
 
                     }
                 });
-
             }
         });
-
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                txtAdId=findViewById(R.id.v_adid);
+                txtAdId = findViewById(R.id.v_adid);
                 rdisplay.setAdId(txtAdId.getText().toString());
-                SID=rdisplay.getAdId();
-
-                DatabaseReference rupdate= FirebaseDatabase.getInstance().getReference().child("Sharing");
-
+                SID = rdisplay.getAdId();
+                DatabaseReference rupdate = FirebaseDatabase.getInstance().getReference().child("RentVehicle");
                 try{
-
                     if(TextUtils.isEmpty(txtFrom.getText().toString()))
                     {
 
                     }
                     else if(TextUtils.isEmpty(txtTo.getText().toString()))
-                    {
-
-                    }
-                    else if(TextUtils.isEmpty(txtAdId.getText().toString()))
                     {
 
                     }
@@ -147,35 +126,33 @@ public class Display extends AppCompatActivity {
                     else if(TextUtils.isEmpty(txtATime.getText().toString()))
                     {
 
+
                     }
+
                     else
                     {
-                        rid.setFrom(txtFrom.getText().toString().trim());
-                        rid.setTo(txtTo.getText().toString().trim());
-                        rid.setAdId(txtAdId.getText().toString().trim());
-                        rid.setName(txtName.getText().toString().trim());
-                        rid.setSeat(txtSeat.getText().toString().trim());
-                        rid.setRide(txtRide.getText().toString().trim());
-                        rid.setDate(txtDate.getText().toString().trim());
-                        rid.setDTime(txtDTime.getText().toString().trim());
-                        rid.setATime(txtATime.getText().toString().trim());
-                        rid.setVm(txtVm.getText().toString().trim());
+                        rdisplay.setFrom(txtFrom.getText().toString().trim());
+                        rdisplay.setTo(txtTo.getText().toString().trim());
+                        rdisplay.setName(txtName.getText().toString().trim());
+                        rdisplay.setSeat(txtSeat.getText().toString().trim());
+                        rdisplay.setRide(txtRide.getText().toString().trim());
+                        rdisplay.setDate(txtDate.getText().toString().trim());
+                        rdisplay.setDTime(txtDTime.getText().toString().trim());
+                        rdisplay.setATime(txtATime.getText().toString().trim());
+                        rdisplay.setVm(txtVm.getText().toString().trim());
 
                         rupdate.child(SID).setValue(rdisplay);
-                        Toast.makeText(getApplicationContext(),"Update Was Successful",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Rent Update Was Successful",Toast.LENGTH_SHORT).show();
 
 
                     }
 
-                }catch (NumberFormatException e)
-                {
-                    Toast.makeText(getApplicationContext(),"Enter a valid Contact No",Toast.LENGTH_SHORT).show();
+                } catch (NumberFormatException nfe) {
+                    Toast.makeText(getApplicationContext(),"Enter valid Data",Toast.LENGTH_SHORT).show();;
                 }
 
             }
         });
-
-
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,20 +160,19 @@ public class Display extends AppCompatActivity {
                 txtAdId=findViewById(R.id.v_adid);
                 rdisplay.setAdId(txtAdId.getText().toString());
                 SID=rdisplay.getAdId();
-                DatabaseReference rdelete=FirebaseDatabase.getInstance().getReference().child("Sharing").child(SID);
+                DatabaseReference rdelete=FirebaseDatabase.getInstance().getReference().child("RentVehicle").child(SID);
                 rdelete.removeValue();
-                Toast.makeText(getApplicationContext(),"Booking Deleted Successfully",Toast.LENGTH_SHORT).show();
-                clearControls();
+                Toast.makeText(getApplicationContext(),"Rent Deleted Successfully",Toast.LENGTH_SHORT).show();
+                clearFeilds4();
             }
         });
-    }
 
-    public void clearControls()
+    }
+    public void clearFeilds4()
     {
 
         txtFrom.setText("");
         txtTo.setText("");
-        txtAdId.setText("");
         txtName.setText("");
         txtSeat.setText("");
         txtRide.setText("");
@@ -207,5 +183,4 @@ public class Display extends AppCompatActivity {
 
 
     }
-
 }
