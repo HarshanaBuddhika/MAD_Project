@@ -73,35 +73,35 @@ public class Booking extends AppCompatActivity {
 
                     if(TextUtils.isEmpty(name.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(uid.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(adid.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(address.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(tripstart.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(tripend.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(noofpassenger.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(nodays.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else
                     {

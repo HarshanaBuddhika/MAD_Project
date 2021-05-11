@@ -61,4 +61,10 @@ public class Rent extends AppCompatActivity {
         Intent intent=new Intent(this,Booking.class);
         startActivity(intent);
     }
+
+    public void addrent(View view)
+    {
+        Intent intent=new Intent(this,Rent_add.class);
+        startActivity(intent);
+    }
 }

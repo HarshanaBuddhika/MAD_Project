@@ -50,19 +50,19 @@ public class payment_online extends AppCompatActivity {
                 {
                     if(TextUtils.isEmpty(name.getText().toString()))
                     {
-                        Toast.makeText(getApplicationContext(),"Enter A valid Name",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(uid.getText().toString()))
                     {
-                        Toast.makeText(getApplicationContext(),"Enter A valid User ID",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(bid.getText().toString()))
                     {
-                        Toast.makeText(getApplicationContext(),"Enter A valid Booking ID",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(amount.getText().toString()))
                     {
-                        Toast.makeText(getApplicationContext(),"Enter A valid Amount",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else
                     {

@@ -28,7 +28,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_inputs"
         android:ems="10"
-        android:hint="User ID"
+        android:hint="User Name"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -56,7 +56,7 @@ public class Payments_display extends AppCompatActivity {
                                 duid.setText(snapshot.child("uid").getValue().toString());
                                 dbid.setText(snapshot.child("bid").getValue().toString());
                                 damount.setText(snapshot.child("amount").getValue().toString());
-                                dcardno.setText(snapshot.child("referenceNumber").getValue().toString());
+                                dcardno.setText(snapshot.child("cnumber").getValue().toString());
                         }
                         else
                             {

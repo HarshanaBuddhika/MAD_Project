@@ -52,7 +52,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="30dp"
-        android:text="User ID"
+        android:text="User Name"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />

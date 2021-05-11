@@ -1,3 +1,56 @@
 <resources>
     <string name="app_name">Travel Partner</string>
+    <string name="txtUname">User Name</string>
+    <string name="EditUname">Name</string>
+    <string name="title_activity_login01">LoginActivity01</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="textUsername">Username</string>
+    <string name="textPassword">Password</string>
+    <string name="txtUsername">UserName :</string>
+    <string name="txtpassword">Password</string>
+    <string name="btnSelectall">Login</string>
+    <string name="txtRegNav">Loging to the System</string>
+    <string name="txtName">First Name</string>
+    <string name="txtLname">Last Name</string>
+    <string name="txtemail">E Mail</string>
+    <string name="txtPhone">Phone Number</string>
+    <string name="txtPassword">Password</string>
+    <string name="btnreg">Register Hear</string>
+    <string name="txtNoAccount">Don\'t have an Account</string>
+
+    <string name="todo">TODO</string>
+    <string name="post">Post</string>
+    <string name="enter_number_of_seats">Enter Number Of Seats</string>
+    <string name="your_rent_id_is">Your Rent Id is</string>
+    <string name="search_a_rent">Search A Rent</string>
+    <string name="update">Update</string>
+
+    <string name="post_a_ride">Post a ride</string>
+    <string name="update_a_ride">Update a Ride</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="delete_a_ride">Delete a Ride</string>
+    <string name="view_a_ride">View a Ride</string>
+    <string name="where_are_you_from">Where are you from?</string>
+    <string name="where_are_you_going">Where are you going?</string>
+    <string name="please_enter_your_ad_id">Please enter your ad ID</string>
+    <string name="name">Name</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="please_enter_number_of_available_seats">Please enter number of available seats</string>
+    <string name="enter_the_total_cost_for_ride">Enter the total cost for ride</string>
+    <string name="enter_date">Enter date</string>
+    <string name="enter_departure_time">Enter departure time</string>
+    <string name="enter_arrival_time">Enter Arrival time</string>
+    <string name="enter_vehical_model">Enter vehical model</string>
+    <string name="post_ad">Post Ad</string>
+    <string name="back2">Back</string>
+    <string name="Rtitle">"Riders "</string>
+    <string name="canada">Canada</string>
 </resources>

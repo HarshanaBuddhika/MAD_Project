@@ -105,35 +105,35 @@ public class Booking_display extends AppCompatActivity {
 
                     if(TextUtils.isEmpty(name.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(uid.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(adid.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(address.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(tspoint.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(tepoint.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(npassengers.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else if(TextUtils.isEmpty(ndays.getText().toString()))
                     {
-
+                        Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
                     }
                     else
                     {

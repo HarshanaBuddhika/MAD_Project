@@ -61,4 +61,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,Account.class);
         startActivity(intent);
     }
+
+    public void booking(View view)
+    {
+        Intent intent=new Intent(this,Booking_Home.class);
+        startActivity(intent);
+    }
+
+    public void rent(View view)
+    {
+        Intent intent=new Intent(this,Rent.class);
+        startActivity(intent);
+    }
+
+    public void share(View view)
+    {
+        Intent intent=new Intent(this,Share.class);
+        startActivity(intent);
+    }
+
+    public void logout(View view)
+    {
+        Intent intent=new Intent(this,login.class);
+        startActivity(intent);
+    }
 }

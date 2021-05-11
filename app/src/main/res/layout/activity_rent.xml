@@ -17,4 +17,22 @@
         app:menu="@menu/menu_navigation"
         android:layout_alignParentBottom="true"/>
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="167dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginRight="123dp"
+        android:background="@drawable/custom_buttons"
+        android:onClick="addrent"
+        android:text="Add Rent Cars" />
+
 </RelativeLayout>

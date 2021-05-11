@@ -18,11 +18,9 @@ public class Payment_card extends AppCompatActivity {
     Button cardPayment;
     String paymentID;
 
-    DatabaseReference databaseReference;
+    DatabaseReference dbcardpayment;
 
     Payments pay;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,66 +44,64 @@ public class Payment_card extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                databaseReference=FirebaseDatabase.getInstance().getReference().child("CardPayments");
+                dbcardpayment=FirebaseDatabase.getInstance().getReference().child("CardPayments");
 
                 try {
 
-                    if(TextUtils.isEmpty(name.getText().toString()))
-                    {
+                        if(TextUtils.isEmpty(name.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid Name ",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(TextUtils.isEmpty(uid.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid User ID ",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(TextUtils.isEmpty(bid.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(TextUtils.isEmpty(amount.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(TextUtils.isEmpty(cardNumber.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(TextUtils.isEmpty(cardName.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
+                        }
+                        else if(TextUtils.isEmpty(expDate.getText().toString()))
+                        {
+                            Toast.makeText(getApplicationContext(),"Enter A valid value to this field ",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            pay.setName(name.getText().toString().trim());
+                            pay.setUid(uid.getText().toString().trim());
+                            pay.setBid(bid.getText().toString().trim());
+                            pay.setAmount(Double.parseDouble(amount.getText().toString().trim()));
+                            pay.setCnumber(Integer.parseInt(cardNumber.getText().toString().trim()));
+                            pay.setOwoname(cardName.getText().toString().trim());
+                            pay.setExp(expDate.getText().toString().trim());
+                            pay.setCsv(Integer.parseInt(cards.getText().toString().trim()));
 
+                            paymentID=pay.getBid()+pay.getUid();
+
+                            dbcardpayment.child(paymentID).setValue(pay);
+
+                            Toast.makeText(getApplicationContext(),"Payment Was successfull",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Your Payment ID is your Booking ID + User ID",Toast.LENGTH_LONG).show();
+                            clearFeilds1();
+
+                        }
                     }
-                    else if(TextUtils.isEmpty(uid.getText().toString()))
+                    catch (Exception e)
                     {
-
+                        e.printStackTrace();
                     }
-                    else if(TextUtils.isEmpty(bid.getText().toString()))
-                    {
-
-                    }
-                    else if(TextUtils.isEmpty(amount.getText().toString()))
-                    {
-
-                    }
-                    else if(TextUtils.isEmpty(cardNumber.getText().toString()))
-                    {
-
-                    }
-                    else if(TextUtils.isEmpty(cardName.getText().toString()))
-                    {
-
-                    }
-                    else if(TextUtils.isEmpty(expDate.getText().toString()))
-                    {
-
-                    }
-
-                    else
-                    {
-                        pay.setName(name.getText().toString().trim());
-                        pay.setUid(uid.getText().toString().trim());
-                        pay.setBid(bid.getText().toString().trim());
-                        pay.setAmount(Double.parseDouble(amount.getText().toString().trim()));
-                        pay.setCnumber(Integer.parseInt(cardNumber.getText().toString().trim()));
-                        pay.setOwoname(cardName.getText().toString().trim());
-                        pay.setExp(expDate.getText().toString().trim());
-                        pay.setCsv(Integer.parseInt(cards.getText().toString().trim()));
-
-                        paymentID=pay.getBid()+pay.getUid();
-
-                        databaseReference.child(paymentID).setValue(pay);
-
-                        Toast.makeText(getApplicationContext(),"Payment Was successfull",Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),"Your Payment ID is your Booking ID + User ID",Toast.LENGTH_LONG).show();
-                        clearFeilds1();
-
-                    }
-                }catch (NumberFormatException e)
-                {
-                    Toast.makeText(getApplicationContext(),"Enter A valid CVS",Toast.LENGTH_SHORT).show();
-                }
-
-
-            }
+           }
 
         });
     }
