@@ -1,7 +1,5 @@
 package com.example.travelpartner;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,18 +8,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class post extends AppCompatActivity {
+    EditText txtFrom, txtTo, txtAdId, txtName, txtSeat, txtRide, txtDate, txtDTime, txtATime, txtVm;
+    Button butPost;
+    DatabaseReference dbRef;
+    Rider rid;
 
-     EditText txtFrom, txtTo, txtAdId, txtName, txtSeat, txtRide, txtDate, txtDTime, txtATime, txtVm;
-     Button butPost;
-     DatabaseReference dbRef;
-     Rider rid;
+    long adid=0;
 
-     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-     private DatabaseReference root = db.getReference().child("Rider");
 
 
     @Override
@@ -31,7 +34,7 @@ public class post extends AppCompatActivity {
 
         txtFrom = findViewById(R.id.TpFrom);
         txtTo = findViewById(R.id.TpTo);
-        txtAdId = findViewById(R.id.TpAdId);
+        txtAdId = findViewById(R.id.v_adid);
         txtName = findViewById(R.id.TpName);
         txtSeat = findViewById(R.id.TpSeat);
         txtRide = findViewById(R.id.TpRide);
@@ -44,20 +47,34 @@ public class post extends AppCompatActivity {
 
         rid = new Rider();
 
-        butPost.setOnClickListener(new View.OnClickListener(){
+        dbRef = FirebaseDatabase.getInstance().getReference().child("RentVehicle");
+        dbRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v){
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Rider");
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    adid =(snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        butPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbRef = FirebaseDatabase.getInstance().getReference().child("RentVehicle");
+
                 try{
+
                     if(TextUtils.isEmpty(txtFrom.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Empty Location", Toast.LENGTH_SHORT).show();
                     }
                     else if (TextUtils.isEmpty(txtTo.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Empty Location", Toast.LENGTH_SHORT).show();
                     }
-                    else if (TextUtils.isEmpty(txtAdId.getText().toString())) {
-                        Toast.makeText(getApplicationContext(), "Empty ID", Toast.LENGTH_SHORT).show();
-                    }
+
                     else if (TextUtils.isEmpty(txtName.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "Empty Name", Toast.LENGTH_SHORT).show();
                     }
@@ -83,7 +100,6 @@ public class post extends AppCompatActivity {
                     else{
                         rid.setFrom(txtFrom.getText().toString().trim());
                         rid.setTo(txtTo.getText().toString().trim());
-                        rid.setAdId(txtAdId.getText().toString().trim());
                         rid.setName(txtName.getText().toString().trim());
                         rid.setSeat(txtSeat.getText().toString().trim());
                         rid.setRide(txtRide.getText().toString().trim());
@@ -92,22 +108,25 @@ public class post extends AppCompatActivity {
                         rid.setATime(txtATime.getText().toString().trim());
                         rid.setVm(txtVm.getText().toString().trim());
 
-                        dbRef.child("rider1").setValue(rid);
-                        Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
+                        dbRef.child(String.valueOf(adid)).setValue(rid);
+                        Toast.makeText(getApplicationContext(),"Succeessfulyy inserted",Toast.LENGTH_SHORT).show();
+
                         clearControls();
                     }
+                }catch (NumberFormatException nfe){
+                    Toast.makeText(getApplicationContext(), "Please Enter valid Data",Toast.LENGTH_SHORT).show();
+
                 }
-                catch (NumberFormatException nfe){
-                    Toast.makeText(getApplicationContext(),"Invalid Vehicle Model", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
+
     }
 
     private void clearControls(){
+
         txtFrom.setText("");
         txtTo.setText("");
-        txtAdId.setText("");
         txtName.setText("");
         txtSeat.setText("");
         txtRide.setText("");
@@ -115,14 +134,11 @@ public class post extends AppCompatActivity {
         txtDTime.setText("");
         txtATime.setText("");
         txtVm.setText("");
-
+        txtAdId.setText(String.valueOf(adid));
     }
 
-    public void button (View view){
-        Intent intent =new Intent(this,Share.class);
+    public void previous (View view){
+        Intent intent=new Intent( this,Rent.class);
         startActivity(intent);
-
     }
-
-
 }
