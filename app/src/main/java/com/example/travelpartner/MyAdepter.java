@@ -9,10 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 
 public class MyAdepter extends RecyclerView.Adapter<MyAdepter.myviewHolder> {
 
+
+    DatabaseReference dbRef;
     Context context;
     ArrayList<RentVehicle> list;
 
@@ -32,18 +36,11 @@ public class MyAdepter extends RecyclerView.Adapter<MyAdepter.myviewHolder> {
     public void onBindViewHolder(@NonNull myviewHolder holder, int position) {
             RentVehicle rentvehicle = list.get(position);
             holder.VehicleType.setText(rentvehicle.getVehicleType());
-        holder.VehicleModel.setText(rentvehicle.getVehicleModel());
-        holder.AvailableSeat.setText(rentvehicle.getAvailableSeats());
-        holder.VehiclePrice.setText(rentvehicle.getVehiclePrice());
-        holder.Contact.setText(rentvehicle.getContact());
-        holder.Description.setText(rentvehicle.getDescription());
-
-
-
-
-
-
-
+            holder.VehicleModel.setText(rentvehicle.getVehicleModel());
+            holder.AvailableSeat.setText(rentvehicle.getAvailableSeats());
+            holder.VehiclePrice.setText(rentvehicle.getVehiclePrice());
+            holder.Contact.setText(rentvehicle.getContact());
+            holder.Description.setText(rentvehicle.getDescription());
 
     }
 
