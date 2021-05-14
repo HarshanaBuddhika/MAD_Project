@@ -2,8 +2,6 @@ package com.example.travelpartner;
 
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 
-import junit.framework.TestCase;
-
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -28,5 +26,10 @@ public class RentTest {
     public void testIntentAddRent(){
         onView(withId(R.id.btn_AddARent)).perform(click());
         intended(hasComponent(Add_Rent.class.getName()));
+    }
+    @Test
+    public void testIntentShowRent(){
+        onView(withId(R.id.btn_Show)).perform(click());
+        intended(hasComponent(rentlist.class.getName()));
     }
 }

@@ -15,11 +15,6 @@ public class RentVehicle {
     public RentVehicle() {
     }
 
-
-
-
-
-
     public String getId() {
         return Id;
     }

@@ -16,10 +16,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class rentlist extends AppCompatActivity {
-    RecyclerView recyclerView;
-    DatabaseReference dbRef;
-    MyAdepter myAdepter;
-    ArrayList<RentVehicle> list;
+   private  RecyclerView recyclerView;
+   private DatabaseReference dbRef;
+   private MyAdepter myAdepter;
+   private ArrayList<RentVehicle> rentVehicleData;
 
 
     @Override
@@ -27,24 +27,33 @@ public class rentlist extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rentlist);
 
-        recyclerView =findViewById(R.id.rentList);
+
+        recyclerView = findViewById(R.id.rentList);
+
+
+        rentVehicleData = new ArrayList<RentVehicle>();
+
         dbRef = FirebaseDatabase.getInstance().getReference("RentVehicle");
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
-        myAdepter = new MyAdepter(this,list);
-        recyclerView.setAdapter(myAdepter);
-
-        dbRef.addValueEventListener(new ValueEventListener() {
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChildren()){
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        RentVehicle rentVehicle = new RentVehicle();
+                        rentVehicle.setVehicleType(dataSnapshot.child("vehicleType").getValue().toString());
+                        rentVehicle.setVehicleModel(dataSnapshot.child("vehicleModel").getValue().toString());
+                        rentVehicle.setAvailableSeats(Integer.parseInt(dataSnapshot.child("availableSeats").getValue().toString()));
+                        rentVehicle.setContact(Integer.parseInt(dataSnapshot.child("contact").getValue().toString()));
+                        rentVehicle.setDescription(dataSnapshot.child("description").getValue().toString());
+                        rentVehicle.setVehiclePrice(dataSnapshot.child("vehiclePrice").getValue().toString());
+                        rentVehicleData.add(rentVehicle);
+                    }
 
-                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    RentVehicle rentVehicle = dataSnapshot.getValue(RentVehicle.class);
-                    list.add(rentVehicle);
+                    myAdepter = new MyAdepter(rentlist.this, rentVehicleData);
+                    recyclerView.setAdapter(myAdepter);
+                    myAdepter.notifyDataSetChanged();
                 }
-                myAdepter.notifyDataSetChanged();
             }
 
             @Override
@@ -52,7 +61,9 @@ public class rentlist extends AppCompatActivity {
 
             }
         });
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
     }
+
+
 }

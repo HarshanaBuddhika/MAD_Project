@@ -60,11 +60,11 @@ public class Post_Rent extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.hasChildren())
                         {
-                         Type.setText(snapshot.child("VehicleType").getValue().toString());
-                         Model.setText(snapshot.child("VehicleModel").getValue().toString());
-                         Seats.setText(snapshot.child("AvailableSeats").getValue().toString());
-                         Price.setText(snapshot.child("VehiclePrice").getValue().toString());
-                         Contact.setText(snapshot.child("Contact").getValue().toString());
+                         Type.setText(snapshot.child("vehicleType").getValue().toString());
+                         Model.setText(snapshot.child("vehicleModel").getValue().toString());
+                         Seats.setText(snapshot.child("availableSeats").getValue().toString());
+                         Price.setText(snapshot.child("vehiclePrice").getValue().toString());
+                         Contact.setText(snapshot.child("contact").getValue().toString());
                          Description.setText(snapshot.child("description").getValue().toString());
                         }
                         else

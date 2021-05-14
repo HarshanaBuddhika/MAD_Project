@@ -9,59 +9,60 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DatabaseReference;
-
 import java.util.ArrayList;
 
 public class MyAdepter extends RecyclerView.Adapter<MyAdepter.myviewHolder> {
 
 
-    DatabaseReference dbRef;
-    Context context;
-    ArrayList<RentVehicle> list;
 
-    public MyAdepter(Context context, ArrayList<RentVehicle> list) {
+    private Context context;
+    private ArrayList<RentVehicle> rentVehicleData= new ArrayList<>();
+
+    public MyAdepter(Context context, ArrayList<RentVehicle> rentVehicleData) {
         this.context = context;
-        this.list = list;
+        this.rentVehicleData = rentVehicleData;
     }
 
     @NonNull
     @Override
     public myviewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.vehicle,parent,false);
-        return  new myviewHolder(v);
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vehicle,parent,false);
+        return new myviewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull myviewHolder holder, int position) {
-            RentVehicle rentvehicle = list.get(position);
-            holder.VehicleType.setText(rentvehicle.getVehicleType());
-            holder.VehicleModel.setText(rentvehicle.getVehicleModel());
-            holder.AvailableSeat.setText(rentvehicle.getAvailableSeats());
-            holder.VehiclePrice.setText(rentvehicle.getVehiclePrice());
-            holder.Contact.setText(rentvehicle.getContact());
-            holder.Description.setText(rentvehicle.getDescription());
+
+        RentVehicle rentVehicleDatas = rentVehicleData.get(position);
+
+        holder.VType.setText(rentVehicleDatas.getVehicleType());
+        holder.VModel.setText(rentVehicleDatas.getVehicleModel());
+        holder.VSeat.setText(String.valueOf(rentVehicleDatas.getAvailableSeats()));
+        holder.VPrice.setText(rentVehicleDatas.getVehiclePrice());
+       holder.VContact.setText(String.valueOf(rentVehicleDatas.getContact()));
+        holder.VDes.setText(rentVehicleDatas.getDescription());
 
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return rentVehicleData.size();
     }
 
-    public class myviewHolder extends RecyclerView.ViewHolder {
+    public static class myviewHolder extends RecyclerView.ViewHolder {
 
-        TextView VehicleType,VehicleModel,AvailableSeat,VehiclePrice,Contact,Description;
+        TextView VType,VModel,VSeat,VPrice,VContact,VDes;
 
         public myviewHolder(@NonNull View itemView) {
             super(itemView);
 
-            VehicleType = itemView.findViewById(R.id.VPrice);
-            VehicleModel = itemView.findViewById(R.id.VModel);
-            AvailableSeat = itemView.findViewById(R.id.VSeats);
-            VehiclePrice = itemView.findViewById(R.id.VPrice);
-            Contact = itemView.findViewById(R.id.VContact);
-            Description = itemView.findViewById(R.id.VDes);
+            VType = itemView.findViewById(R.id.VType);
+            VModel = itemView.findViewById(R.id.VModel);
+            VSeat = itemView.findViewById(R.id.VSeats);
+            VPrice = itemView.findViewById(R.id.VPrice);
+            VContact = itemView.findViewById(R.id.VContact);
+            VDes = itemView.findViewById(R.id.VDes);
         }
     }
 }
