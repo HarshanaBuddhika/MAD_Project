@@ -115,9 +115,20 @@ public class Booking extends AppCompatActivity {
                         makeAbooking.setNoofDays(Integer.parseInt(nodays.getText().toString()));
                         makeAbooking.setContactNo(Integer.parseInt(contactno.getText().toString().trim()));
 
-                        bookingref.child(String.valueOf(bookingid)).setValue(makeAbooking);
-                        Toast.makeText(getApplicationContext(),"Booking Successfully Added",Toast.LENGTH_SHORT).show();
-                        clearFeilds3();
+                        boolean sucess=validation(Integer.parseInt(noofpassenger.getText().toString()),contactno.getText().toString(),Integer.parseInt(nodays.getText().toString()));
+
+                        if(sucess==true)
+                        {
+                            bookingref.child(String.valueOf(bookingid)).setValue(makeAbooking);
+                            Toast.makeText(getApplicationContext(),"Booking Successfully Added",Toast.LENGTH_SHORT).show();
+                            clearFeilds3();
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(),"Try Again",Toast.LENGTH_SHORT).show();
+                        }
+
+
 
                     }
 
@@ -143,6 +154,38 @@ public class Booking extends AppCompatActivity {
         nodays.setText("");
         contactno.setText("");
         bookingID.setText(String.valueOf(bookingid));
+    }
+
+    public boolean validation(int noPassenger,String Contactnumber,int Nodays)
+    {
+        if(noPassenger<=0)
+        {
+            noofpassenger.requestFocus();
+            noofpassenger.setError("No of passengers cannot be 0 or (-) value");
+            return false;
+        }
+        else if(Contactnumber.length()==0)
+        {
+            contactno.requestFocus();
+            contactno.setError("Contact No cannot be Empty");
+            return false;
+        }
+        else if(!Contactnumber.matches("^[0-9]{10}$"))
+        {
+            contactno.requestFocus();
+            contactno.setError("Number should be +94077xxxxxxxx");
+            return false;
+        }
+        else if(Nodays<=0 || Nodays>10)
+        {
+            nodays.requestFocus();
+            nodays.setError("No of days should be between 0 - 10");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
 

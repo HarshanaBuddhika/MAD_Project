@@ -101,7 +101,15 @@ public class Account extends AppCompatActivity {
 
     }
 
+    public void reqests(View view)
+    {
+        Intent intent=new Intent(this,share_request_display.class);
+        startActivity(intent);
+    }
+
 }
+
+
 
 
 

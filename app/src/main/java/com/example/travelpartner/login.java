@@ -32,7 +32,7 @@ public class login extends AppCompatActivity {
 
         username = findViewById(R.id.editTextTextPersonName);
         pass = findViewById(R.id.editTextTextPassword);
-        loging = findViewById(R.id.button4);
+        loging = findViewById(R.id.viewRide);
         btn = findViewById(R.id.textView11);
 
         loging.setOnClickListener(new View.OnClickListener() {

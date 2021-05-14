@@ -53,4 +53,33 @@
     <string name="back2">Back</string>
     <string name="Rtitle">"Riders "</string>
     <string name="canada">Canada</string>
+    <string name="back3">Back</string>
+
+    <string name="back4">Back</string>
+    <string name="from">From:</string>
+    <string name="lay_name">Name:</string>
+    <string name="dummy_adid">dummy adid</string>
+    <string name="ad_id">Ad Id:</string>
+    <string name="dummy_to">dummy to</string>
+    <string name="lay_to">To:</string>
+    <string name="dummy_from">dummy from</string>
+    <string name="dummy_name">dummy name</string>
+    <string name="available_seats">Available Seats:</string>
+    <string name="dummy_seats">dummy seats</string>
+    <string name="total_cost">Total cost :</string>
+    <string name="dummy_cost">dummy cost</string>
+    <string name="date">Date:</string>
+    <string name="dummy_date">dummy date</string>
+    <string name="departure_time">Departure Time:</string>
+    <string name="dummy_departure_time">dummy departure time</string>
+    <string name="arrival_time">Arrival Time:</string>
+    <string name="dummy_arrival_time">dummy arrival time</string>
+    <string name="vehicle_model">Vehicle Model:</string>
+    <string name="dummy_vehicle_model">dummy vehicle model</string>
+    <string name="enter_your_advertisement_id_for_search_your_advertisement_details">Enter your Advertisement ID for search your advertisement details</string>
+    <string name="enter_your_advertisement_id_to_search_your_advertisement_details">Enter your advertisement ID to search your advertisement details</string>
+    <string name="update2">Update</string>
+    <string name="seach">seach</string>
+    <string name="delete">Delete</string>
+    <string name="enter_your_ad_id">Enter your Ad ID</string>
 </resources>

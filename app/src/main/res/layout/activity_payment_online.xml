@@ -87,7 +87,7 @@
         android:background="@drawable/custom_inputs"
         android:ems="10"
         android:hint="Amount"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

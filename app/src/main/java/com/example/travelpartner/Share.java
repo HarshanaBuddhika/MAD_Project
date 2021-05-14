@@ -62,9 +62,21 @@ public class Share extends AppCompatActivity {
         startActivity(in);
     }
 
-    public void addshare(View view)
+    public void postAride(View view)
     {
         Intent intent=new Intent(this,share_add.class);
         startActivity(intent);
+    }
+
+    public void display(View view)
+    {
+        Intent intent2=new Intent(this,share_display.class);
+        startActivity(intent2);
+    }
+
+    public void ViewARide(View view){
+        Intent intent =new Intent(this,RecycleViewFirebase.class);
+        startActivity(intent);
+
     }
 }

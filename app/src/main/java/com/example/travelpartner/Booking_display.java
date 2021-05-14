@@ -147,9 +147,16 @@ public class Booking_display extends AppCompatActivity {
                         bdisplay.setNoofDays(Integer.parseInt(ndays.getText().toString()));
                         bdisplay.setContactNo(Integer.parseInt(cnumber.getText().toString().trim()));
 
-                        bupdate.child(BID).setValue(bdisplay);
-                        Toast.makeText(getApplicationContext(),"Booking Update Was Successful",Toast.LENGTH_SHORT).show();
+                        boolean sucess=validation(Integer.parseInt(npassengers.getText().toString()),cnumber.getText().toString(),Integer.parseInt(ndays.getText().toString()));
 
+                        if(sucess==true) {
+                            bupdate.child(BID).setValue(bdisplay);
+                            Toast.makeText(getApplicationContext(), "Booking Update Was Successful", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(),"Try Again",Toast.LENGTH_SHORT).show();
+                        }
 
                     }
 
@@ -192,6 +199,38 @@ public class Booking_display extends AppCompatActivity {
         cnumber.setText("");
 
 
+    }
+
+    public boolean validation(int noPassenger,String Contactnumber,int Nodays)
+    {
+        if(noPassenger<=0)
+        {
+            npassengers.requestFocus();
+            npassengers.setError("No of passengers cannot be 0 or (-) value");
+            return false;
+        }
+        else if(Contactnumber.length()==0)
+        {
+            cnumber.requestFocus();
+            cnumber.setError("Contact No cannot be Empty");
+            return false;
+        }
+        else if(!Contactnumber.matches("^[0-9]{10}$"))
+        {
+            cnumber.requestFocus();
+            cnumber.setError("Number should be +94077xxxxxxxx");
+            return false;
+        }
+        else if(Nodays<=0 || Nodays>10)
+        {
+            ndays.requestFocus();
+            ndays.setError("No of days should be between 0 - 10");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
 

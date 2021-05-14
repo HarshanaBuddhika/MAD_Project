@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="410dp"
-        android:layout_height="505dp"
+        android:layout_width="403dp"
+        android:layout_height="428dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
         android:orientation="vertical"
@@ -35,20 +35,11 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/TpAdId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/please_enter_your_ad_id"
-            android:inputType="textPersonName" />
-
-        <EditText
             android:id="@+id/TpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/please_enter_your_name"
+            android:hint="Please Enter Your User Name"
             android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
@@ -59,7 +50,7 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/please_enter_number_of_available_seats"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/TpRide"
@@ -68,7 +59,7 @@
             android:ems="10"
             android:hint="@string/enter_the_total_cost_for_ride"
             android:importantForAutofill="no"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/TpDate"
@@ -77,7 +68,7 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/enter_date"
-            android:inputType="date|textPersonName" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/TpDepTime"
@@ -86,7 +77,7 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/enter_departure_time"
-            android:inputType="textPersonName|time" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/TpATime"
@@ -95,7 +86,7 @@
             android:ems="10"
             android:hint="@string/enter_arrival_time"
             android:importantForAutofill="no"
-            android:inputType="textPersonName|time" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/TpVModel"
@@ -105,32 +96,42 @@
             android:ems="10"
             android:hint="@string/enter_vehical_model"
             android:inputType="textPersonName" />
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="11dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/TpAdId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toTopOf="@+id/textView23" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="button"
-            android:text="@string/back" />
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Your Share ID is"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/post_ad" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:text="@string/post_ad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TpAdId"
+        android:background="@drawable/custom_buttons"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

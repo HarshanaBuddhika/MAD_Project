@@ -4,7 +4,6 @@ public class Rider {
 
     private String from;
     private String to;
-    private String adId;
     private String name;
     private String seat;
     private String ride;
@@ -12,7 +11,15 @@ public class Rider {
     private String DTime;
     private String ATime;
     private String Vm;
+    private String adId;
 
+    public String getAdId() {
+        return adId;
+    }
+
+    public void setAdId(String adId) {
+        this.adId = adId;
+    }
 
     public Rider() {
     }
@@ -31,14 +38,6 @@ public class Rider {
 
     public void setTo(String to) {
         this.to = to;
-    }
-
-    public String getAdId() {
-        return adId;
-    }
-
-    public void setAdId(String adId) {
-        this.adId = adId;
     }
 
     public String getName() {

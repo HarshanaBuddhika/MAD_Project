@@ -76,9 +76,17 @@ public class payment_online extends AppCompatActivity {
 
                         dbref2.child(paymentid).setValue(pay2);
 
-                        Toast.makeText(getApplicationContext(),"Payment Was successfull",Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),"Your Payment ID is your Booking ID + User ID",Toast.LENGTH_LONG).show();
-                        clearFeilds2();
+                        boolean sucess=validate(Double.parseDouble(amount.getText().toString().trim()),refNum.getText().toString().trim());
+
+                        if(sucess==true) {
+                            Toast.makeText(getApplicationContext(), "Payment Was successfull", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Your Payment ID is your Booking ID + User ID", Toast.LENGTH_LONG).show();
+                            clearFeilds2();
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(),"Try Again",Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                 }catch (NumberFormatException e){
@@ -96,5 +104,25 @@ public class payment_online extends AppCompatActivity {
         bid.setText("");
         amount.setText("");
         refNum.setText("");
+    }
+
+    public boolean validate(Double Amount,String RefNum)
+    {
+        if(Amount<=0)
+        {
+            amount.requestFocus();
+            amount.setError("Invalud amount");
+            return false;
+        }
+        else if(RefNum.length()!=8)
+        {
+            refNum.requestFocus();
+            refNum.setError("Reference Number shoul include 8 digits");
+            return  false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

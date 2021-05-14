@@ -6,7 +6,7 @@ public class Payments {
     private String uid;
     private String bid;
     private double amount;
-    private int cnumber;
+    private String cnumber;
     private String owoname;
     private String exp;
     private int csv;
@@ -50,11 +50,11 @@ public class Payments {
         this.amount = amount;
     }
 
-    public int getCnumber() {
+    public String getCnumber() {
         return cnumber;
     }
 
-    public void setCnumber(int cnumber) {
+    public void setCnumber(String cnumber) {
         this.cnumber = cnumber;
     }
 

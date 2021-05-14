@@ -88,15 +88,10 @@
             android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/button10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Account" />
-
-        <Button
             android:id="@+id/button6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="reqests"
             android:text="View Sahre Requests" />
 
         <Button
